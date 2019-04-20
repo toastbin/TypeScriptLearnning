@@ -13,7 +13,7 @@
   void类型
   never类型
 
-  
+   
 */
 // 写ts代码 必须指定类型
 var flag = true;
@@ -64,10 +64,10 @@ var variableObject = 1123.21;
 // void
 // 从某种意义上说  void与any正好相反, 它表示没有任何类型. 当一个函数 没有返回值时 通常会见到其返回值是 void
 // 通常只在函数上使用
-function print() {
+function log() {
     console.log('没有返回值');
 }
-print();
+log();
 // 单独声明一个 void变量 没有什么大用 ,因为它只能被赋予 null 或者 undefined
 // 配置文件里开启了 strictNullChecks
 // void只能被赋予 undefined 不能赋予 null
@@ -111,4 +111,4 @@ var someValueNum = '123456';
 var numLength = someValueNum.split('');
 console.log(numLength);
 // 两种方式等价  随自己喜好
-//# sourceMappingURL=tsDataType.js.map
+//# sourceMappingURL=02tsDataType.js.map

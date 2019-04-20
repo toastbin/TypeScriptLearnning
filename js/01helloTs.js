@@ -9,4 +9,4 @@ var helloTs = /** @class */ (function () {
 var h = new helloTs();
 console.log(h.greeting());
 console.log(12223);
-//# sourceMappingURL=helloTs.js.map
+//# sourceMappingURL=01helloTs.js.map
