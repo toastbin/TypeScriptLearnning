@@ -89,4 +89,66 @@ dahei.work();
 //    protected   保护类型       在类里面 子类里都可以访问 在类外部不可以访问
 //    private     私有           在类里可以访问 子类和类外部都无法访问   
 // 属性如果不加修饰符 默认就是 public
+//  静态方法  static关键字就是静态方法了
+//  直接通过类名调用静态方法
+// 多态  多态属于继承
+var Student = /** @class */ (function () {
+    function Student(name) {
+        this.name = name;
+    }
+    Student.prototype.eat = function () {
+        console.log('吃的方法');
+    };
+    return Student;
+}());
+var goodStu = /** @class */ (function (_super) {
+    __extends(goodStu, _super);
+    function goodStu(name) {
+        return _super.call(this, name) || this;
+    }
+    goodStu.prototype.eat = function () {
+        console.log('goodSty 吃');
+    };
+    return goodStu;
+}(Student));
+var badStu = /** @class */ (function (_super) {
+    __extends(badStu, _super);
+    function badStu(name) {
+        return _super.call(this, name) || this;
+    }
+    badStu.prototype.eat = function () {
+        console.log('badStu 吃');
+    };
+    return badStu;
+}(Student));
+var s1 = new Student('s1');
+var s2 = new goodStu('s2');
+var s3 = new badStu('s3');
+s1.eat();
+s2.eat();
+s3.eat();
+// 抽象类和抽象方法 
+//用abstract关键字定义抽象类和抽象方法 抽象类种的抽象方法不包含具体实现 并且必须在派生类种进行实现
+//抽象方法必须放在抽象类里面
+// 抽象类和抽象方法用来定义标准
+var Vehicle = /** @class */ (function () {
+    function Vehicle(name) {
+        this.name = name;
+    }
+    return Vehicle;
+}());
+// 抽象类的子类必须实现抽象类里面的抽象方法
+var Car = /** @class */ (function (_super) {
+    __extends(Car, _super);
+    function Car() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Car.prototype.run = function () {
+        console.log('car run');
+    };
+    return Car;
+}(Vehicle));
+var car = new Car('car');
+car.run();
+console.log(car.name);
 //# sourceMappingURL=04class.js.map
