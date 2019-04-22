@@ -140,15 +140,17 @@ var Vehicle = /** @class */ (function () {
 // 抽象类的子类必须实现抽象类里面的抽象方法
 var Car = /** @class */ (function (_super) {
     __extends(Car, _super);
-    function Car() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Car(name, brand) {
+        var _this = _super.call(this, name) || this;
+        _this.brand = brand;
+        return _this;
     }
     Car.prototype.run = function () {
         console.log('car run');
     };
     return Car;
 }(Vehicle));
-var car = new Car('car');
+var car = new Car('car', 'Benz');
 car.run();
 console.log(car.name);
 //# sourceMappingURL=04class.js.map

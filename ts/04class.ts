@@ -138,12 +138,18 @@ abstract class Vehicle {
 }
 // 抽象类的子类必须实现抽象类里面的抽象方法
 class Car extends Vehicle {
+  name:string
+  brand:string
+  constructor(name:string,brand:string){
+    super(name)
+    this.brand = brand
+  }
   run():void{
     console.log('car run');
   }
 }
 
-let car = new Car('car')
+let car = new Car('car','Benz')
 car.run()
 console.log(car.name);
 
