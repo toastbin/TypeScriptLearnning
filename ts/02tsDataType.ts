@@ -19,8 +19,14 @@
 let flag:boolean = true;
 flag = false
 
+// 都是浮点数
 let num:number = 1
 
+// 16进制
+let num16:number = 0x14
+// 2进制
+let binaryNum:number = 0b10100
+console.log(num16,binaryNum);
 let str:string = 'str'
 
 
