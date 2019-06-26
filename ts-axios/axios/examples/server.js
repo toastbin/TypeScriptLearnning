@@ -47,6 +47,19 @@ router.post('/base/post', (req, res) => {
   res.json(req.body)
 })
 
+router.get('/error/get', (req, res)=>{
+  res.status(500)
+  res.end()
+})
+
+router.get('/error/timeout', (req, res)=>{
+  setTimeout(()=>{
+    res.json({
+      msg: 'hello world'
+    })
+  }, 3000)
+})
+
 app.use(router)
 
 
