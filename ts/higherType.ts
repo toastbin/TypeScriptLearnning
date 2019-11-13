@@ -53,10 +53,10 @@ interface Fish {
   layEggs()
 }
 class b implements Bird {
-  fly(){
+  fly() {
 
   }
-  layEggs(){
+  layEggs() {
 
   }
 }
@@ -94,7 +94,7 @@ function padLeft2(value: string, padding: number | string) {
   if (typeof padding === 'string') {
     return padding + value
   }
-  throw new Error( `Expected string or number ${padding}` )
+  throw new Error(`Expected string or number ${padding}`)
 }
 function isNumber(x: any): x is number {
   return typeof x === 'number'
@@ -103,9 +103,9 @@ function isString(x: any): x is string {
   return typeof x === 'string'
 }
 
-class C{
-  a:number
-  b?:number
+class C {
+  a: number
+  b?: number
 }
 let c = new C()
 c.a = 1

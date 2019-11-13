@@ -1,25 +1,25 @@
 // 复习一下es5的对象和继承方式
-function Person(name:string,age:number):void{
+function Person(name: string, age: number): void {
   this.name = name
   this.age = age
 }
-Person.prototype.sayHi = ():void=>{
+Person.prototype.sayHi = (): void => {
   console.log('hi');
 }
-function Stu(name:string,age:number,id:number):void{
+function Stu(name: string, age: number, id: number): void {
   //对象冒充方式 但是没有继承 原型上的方法和属性 只能继承 要继承的那个构造函数里的东西
-  Person.call(this,name,age)
+  Person.call(this, name, age)
   this.id = id
 }
 //把要继承的对象新new一个 挂在当前对象的原型上
 // 对象继承
-Stu.prototype = new Person('1',2)
-Stu.prototype.sayId = function():void{
+Stu.prototype = new Person('1', 2)
+Stu.prototype.sayId = function (): void {
   console.log(`我是${this.id}号`);
 }
-let p = new Person('lhb',20)
+let p = new Person('lhb', 20)
 p.sayHi()
-let stu = new Stu('zyy',18,2015100728)
+let stu = new Stu('zyy', 18, 2015100728)
 console.log(stu.name);
 console.log(stu.age);
 console.log(stu.id);
@@ -29,38 +29,38 @@ stu.sayId()
 
 // ts  es6 class
 class Animal {
-  public name:string
-  constructor( name:string ){
+  public name: string
+  constructor(name: string) {
     this.name = name
   }
-  run():void{ 
+  run(): void {
     console.log(`${this.name} run !`);
   }
-  protected work(){
+  protected work() {
     console.log(`${this.name} is working !`);
   }
-  private secret(){
+  private secret() {
     console.log(`这是一个秘密..`);
   }
-  public excuteSecret(){
+  public excuteSecret() {
     this.secret()
   }
-  public excuteWork(){
+  public excuteWork() {
     this.work()
   }
 }
 
 class Dog extends Animal {
 
-  constructor(name:string){
+  constructor(name: string) {
     //调用父级的构造函数
     super(name)
   }
   //子类中会把同名方法重写了
-  run(){
+  run() {
     console.log(`${this.name} run run run run !!`);
   }
-  work(){
+  work() {
     //调用父类的方法 和java一样
     super.work()
   }
@@ -87,29 +87,29 @@ dahei.work()
 // 多态  多态属于继承
 
 class Student {
-  name:string
-  constructor(name:string){
+  name: string
+  constructor(name: string) {
     this.name = name
   }
-  eat():void{
+  eat(): void {
     console.log('吃的方法');
   }
 }
 
 class goodStu extends Student {
-  constructor( name:string ){
+  constructor(name: string) {
     super(name)
   }
-  eat():void{
+  eat(): void {
     console.log('goodSty 吃');
   }
 }
 
 class badStu extends Student {
-  constructor( name:string ){
+  constructor(name: string) {
     super(name)
   }
-  eat():void{
+  eat(): void {
     console.log('badStu 吃');
   }
 }
@@ -130,26 +130,26 @@ s3.eat()
 // 抽象类和抽象方法用来定义标准
 
 abstract class Vehicle {
-  name:string
-  constructor( name:string ){
+  name: string
+  constructor(name: string) {
     this.name = name
   }
-  abstract run():any
+  abstract run(): any
 }
 // 抽象类的子类必须实现抽象类里面的抽象方法
 class Car extends Vehicle {
-  name:string
-  brand:string
-  constructor(name:string,brand:string){
+  name: string
+  brand: string
+  constructor(name: string, brand: string) {
     super(name)
     this.brand = brand
   }
-  run():void{
+  run(): void {
     console.log('car run');
   }
 }
 
-let car = new Car('car','Benz')
+let car = new Car('car', 'Benz')
 car.run()
 console.log(car.name);
 
