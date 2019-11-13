@@ -18,7 +18,13 @@
 // 写ts代码 必须指定类型
 var flag = true;
 flag = false;
+// 都是浮点数
 var num = 1;
+// 16进制
+var num16 = 0x14;
+// 2进制
+var binaryNum = 20;
+console.log(num16, binaryNum);
 var str = 'str';
 // 定义数组有些许不同
 // 1.
